@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" href="../CSS/estilos.css"> --> 
+	<link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
+	<title>Login</title>
+</head>
+<body>
+	<h1 class="titulo">Banca electrónica</h1>
+	<div class="formulario">
+		<h2>Ingresar</h2>
+		<form action="#">
+			<p><input type="text" placeholder="Usuario"></p>
+			<p><input type="password" placeholder="Contraseña"></p>
+			<p><input type="submit" value="Entrar"></p>
+		</form>
+	</div>
+</body>
+</html>
