@@ -21,5 +21,13 @@ urlpatterns = [
     path('',views.login),
     path('login/', views.login),
     path('cuentas/', views.cuentas),
-    path('monetaria/',views.monetaria)
+    path('monetaria/',views.monetaria),
+
+    path('user/transaccionPropia/',views.transaccionPropia),
+    path('user/transaccionTercero/',views.transaccionTercero),
+    path('user/suspende/',views.suspende),
+    path('user/autorizaCheque/',views.autorizaCheque),
+    path('user/estadoCuenta/',views.estadoCuenta),
+    path('user/chequera/',views.chequera)
+
 ]

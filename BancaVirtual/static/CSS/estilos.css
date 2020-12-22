@@ -91,6 +91,7 @@ aside p{
 	height: 100px;
 	color: white;
 	font-size: 25px;
+	text-decoration: none;
 }
 aside p:hover{
 	color: black;
