@@ -1,3 +1,4 @@
+#drop database bancaVirtual;
 create database bancaVirtual;
 use bancaVirtual;
 
@@ -7,7 +8,7 @@ descripcion varchar(30) not null
 );
 
 create table clienteEmpresarial(
-nit int primary key,
+nit bigint primary key,
 tipoEmpresa int not null,
 nombreEmpresa varchar(30) not null,
 nombreComercial varchar(30) not null,
@@ -18,8 +19,8 @@ foreign key(tipoEmpresa) references tipoEmpresa(id)
 );
 
 create table clienteIndividual(
-cui int primary key,
-nit int not null,
+cui bigint primary key,
+nit bigint not null,
 primerNombre varchar(30) not null,
 segundoNombre varchar(30) not null,
 primerApellido varchar(30) not null,
@@ -29,8 +30,8 @@ fechaNacimiento date not null
 
 create table cliente(
 id int primary key auto_increment,
-clienteIndividual int,
-clienteEmpresarial int,
+clienteIndividual bigint,
+clienteEmpresarial bigint,
 password varchar(30) not null,
 foreign key(clienteIndividual) references clienteIndividual(cui),
 foreign key(clienteEmpresarial) references clienteEmpresarial(nit)
@@ -42,7 +43,7 @@ descripcion varchar(30) not null
 );
 
 create table cuenta(
-numeroCuenta int primary key auto_increment,
+numeroCuenta bigint primary key auto_increment,
 cliente int not null,
 tipoCuenta int not null,
 saldo int not null,
@@ -59,7 +60,7 @@ descripcion varchar(30)
 
 create table prestamo(
 id int primary key,
-cuenta int not null,
+cuenta bigint not null,
 monto int not null,
 fueAprobado boolean not null,
 fueAcreditado boolean not null,
@@ -70,24 +71,24 @@ foreign key(modoPago) references modoPago(id)
 );
 
 create table cuentaTercero(
-cuentaLocal int not null,
-cuentaTercero int not null,
+cuentaLocal bigint not null,
+cuentaTercero bigint not null,
 primary key(cuentaLocal,cuentaTercero),
 foreign key(cuentaLocal) references cuenta(numeroCuenta),
 foreign key(cuentaTercero) references cuenta(numeroCuenta)
 );
 
 create table planilla(
-cuentaLocal int not null,
-cuentaTercero int not null,
+cuentaLocal bigint not null,
+cuentaTercero bigint not null,
 primary key(cuentaLocal,cuentaTercero),
 foreign key(cuentaLocal) references cuenta(numeroCuenta),
 foreign key(cuentaTercero) references cuenta(numeroCuenta)
 );
 
 create table proveedor(
-cuentaLocal int not null,
-cuentaTercero int not null,
+cuentaLocal bigint not null,
+cuentaTercero bigint not null,
 primary key(cuentaLocal,cuentaTercero),
 foreign key(cuentaLocal) references cuenta(numeroCuenta),
 foreign key(cuentaTercero) references cuenta(numeroCuenta)
@@ -100,8 +101,8 @@ descripcion varchar(30)
 
 create table transaccion(
 id int primary key auto_increment,
-cuentaLocal int,
-cuenatTercero int,
+cuentaLocal bigint,
+cuenatTercero bigint,
 esDepositoTercero boolean,
 esDepositoLocal boolean,
 esPlanilla boolean,
@@ -112,7 +113,7 @@ fecha date
 
 create table chequera(
 noChequera int,
-cuenta int,
+cuenta bigint,
 primary key(noChequera,cuenta),
 foreign key(cuenta) references cuenta(numeroCuenta)
 );
@@ -120,7 +121,7 @@ foreign key(cuenta) references cuenta(numeroCuenta)
 create table chequeAutorizado(
 noAutorizacion int primary key auto_increment,
 noChequera int,
-cuenta int,
+cuenta bigint,
 noCheque int not null,
 nombreCobrador varchar(50),
 monto bigint,
@@ -135,7 +136,7 @@ descripcion varchar(30) not null
 create table cheque(
 noCheque int not null,
 noChequera int not null,
-cuenta int not null,
+cuenta bigint not null,
 estado int not null,
 primary key(noCheque,noChequera,cuenta),
 foreign key(noChequera,cuenta) references chequera(noChequera,cuenta),
@@ -154,12 +155,17 @@ create table chequeCobrado(
 noTransaccion int primary key auto_increment,
 noCheque int,
 noChequera int,
-cuenta int,
+cuenta bigint,
 monto bigint not null,
 cobrador bigint,
 fecha date not null,
 foreign key(cobrador) references cobrador(dpi),
 foreign key(noCheque,noChequera,cuenta) references cheque(noCheque,noChequera,cuenta)
 );
+
+#select * from clienteIndividual;
+#truncate table clienteIndividual;
+#truncate table cliente;
+#select * from cliente;
 
 

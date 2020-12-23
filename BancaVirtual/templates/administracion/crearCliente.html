@@ -10,8 +10,10 @@
 	<link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
 </head>
 <body>
-	<!--
-		<nav>
+		
+    <br/>
+	
+		<!--<nav>
 		<div class="NAVopciones">
 			<a href="../login/" style="text-decoration:none"><p>Cuenta monetaria</p></a>
 			<p>Cuenta de ahorro</p>
@@ -19,8 +21,8 @@
 			<p>Datos de usuario</p>
 		</div>
 		<div class="menu">aqui va el boton de menu</div>
-	</nav>
-	-->
+	</nav>-->
+	
 	<aside>
 		<a href="../crearCliente/" style="text-decoration:none"><p>Crear Cliente Nuevo</p></a>
 		<a href="../crearCuenta/" style="text-decoration:none"><p>Crear Cuenta</p></a>
@@ -31,5 +33,17 @@
 		<a href="../desbloquea/" style="text-decoration:none"><p>Desbloqueo de cuenta</p></a>
 
 	</aside>
+	<div class="formulario">
+    	<h1>{{ mensaje }}</h1>
+    	<form method="POST">
+        	{{ form.as_p }}
+        	{% csrf_token %}
+    		<button type="submit">Registrar</button>
+    	</form>
+    </div>
+	
+	 
+    
+    
 </body>
 </html>

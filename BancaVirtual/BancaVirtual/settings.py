@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bancaVirtual', # dbname
-        'USER': 'root', # master username
+        'USER': 'Marvin', # master username
         'PASSWORD': 'Ca$tellanos333', # master password
         'HOST': 'localhost', # Endpoint
         'PORT': '3306',
