@@ -79,13 +79,14 @@ nav{
 aside{
 	margin-top: 0px;
 	width: 20%;
-	height: 610px;
+	height: auto;
 	background-color: #7d8eec;
 	display: inline-block;
 	position: relative;
 }
 
 aside p{
+	background-color: #7d8eec;
 	border: solid 1px lightgray;
 	margin: 0px;
 	height: 100px;

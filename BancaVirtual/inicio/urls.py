@@ -18,10 +18,12 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+#Path de usuarios
     path('',views.login),
-    path('login/', views.login),
-    path('cuentas/', views.cuentas),
-    path('monetaria/',views.monetaria),
+    path('user/login/', views.login),
+    path('user/cuentas/', views.cuentas),
+
+   # path('monetaria/',views.monetaria),
 
     path('user/transaccionPropia/',views.transaccionPropia),
     path('user/transaccionTercero/',views.transaccionTercero),
@@ -29,5 +31,4 @@ urlpatterns = [
     path('user/autorizaCheque/',views.autorizaCheque),
     path('user/estadoCuenta/',views.estadoCuenta),
     path('user/chequera/',views.chequera)
-
 ]

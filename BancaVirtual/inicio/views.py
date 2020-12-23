@@ -1,15 +1,17 @@
 from django.shortcuts import render
 
 # Create your views here.
+#********************************************************
+#views de usuario
+#********************************************************
 def login(request):
-	return render(request,'login.html')
+	return render(request,'user/login.html')
 
 def cuentas(request):
-	return render(request,'cuentas.html')
+	return render(request,'user/cuentas.html')
 
-def monetaria(request):
-	return render(request,'monetaria.html')
-#--------------------------------------------------------
+#def monetaria(request):
+	#return render(request,'monetaria.html')
 
 def transaccionPropia(request):
 	return render(request,'user/transaccionPropia.html')
@@ -28,3 +30,4 @@ def estadoCuenta(request):
 
 def chequera(request):
 	return render(request,'user/chequera.html')
+
