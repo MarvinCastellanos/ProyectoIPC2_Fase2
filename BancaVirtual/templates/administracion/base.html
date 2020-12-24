@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Banca Virutal</title>
+	<link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
+</head>
+<body>
+		
+    <br/>
+	<aside>
+		<a href="../crearClienteIndividual/" style="text-decoration:none"><p>Crear Cliente Individual</p></a>
+		<a href="../crearClienteEmpresarial/" style="text-decoration:none"><p>Crear Cliente Empresarial</p></a>
+		<a href="../crearCuenta/" style="text-decoration:none"><p>Crear Cuenta</p></a>
+		<a href="../cobrarCheque/" style="text-decoration:none"><p>Cobrar Cheque</p></a>
+		<a href="../crearChequera/" style="text-decoration:none"><p>Crear Chequera</p></a>
+		<a href="../deposito/" style="text-decoration:none"><p>Deposito</p></a>
+		<a href="../credito/" style="text-decoration:none"><p>Retiro</p></a>
+		<a href="../desbloquea/" style="text-decoration:none"><p>Desbloqueo de cuenta</p></a>
+
+	</aside>
+	<div class="formulario">
+		{% block content %}
+    	{% endblock %}
+    </div> 
+</body>
+</html>

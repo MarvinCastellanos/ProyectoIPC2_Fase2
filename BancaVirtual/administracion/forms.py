@@ -1,28 +1,29 @@
 from django import forms
 #from .models import *
 
-class clienteindividual(forms.Form):
-	cui = forms.IntegerField(required = True, help_text='')
-	nit = forms.IntegerField(required = True)
-	primernombre = forms.CharField(required = True)
-	segundonombre = forms.CharField(required = True)
-	primerapellido = forms.CharField(required = True)
-	segundoapellido = forms.CharField(required = True)
-	fechanacimiento = forms.DateField(required = True)
-	contra = forms.CharField(widget=forms.PasswordInput, required=True)
+class clienteempresarial(forms.Form):
+	nit = forms.IntegerField(required = True, help_text='')
+	tipoEmpresa = forms.IntegerField(required = True)
+	nombreEmpresa = forms.CharField(required = True)
+	nombreComercial = forms.CharField(required = True)
+	dpiRepresentante = forms.CharField(required = True)
+	nombreRepersentante = forms.CharField(required = True)
+	apellidoRepersentante = forms.CharField(required = True)
+	contrasena = forms.CharField(widget=forms.PasswordInput, required=True)
 
 	class Meta:
         #model = Clienteindividual
-		fields = ("cui","nit","primernombre","segundonombre","primerapellido","segundoapellido","fechanacimiento","contra")
+		fields = ("cui","tipoEmpresa","nombreEmpresa","nombreComercial","dpiRepresentante","nombreRepersentante","apellidoRepersentante","contrasena")
 
-class clienteempresarial(forms.Form):
+class Clienteindividual(forms.Form):
+	cui=forms.IntegerField(required=True)
 	nit=forms.IntegerField(required=True)
-	tipoEmpresa=forms.IntegerField(required=True)
-	nombreEmpresa=forms.CharField(required=True)
-	nombreComercial=forms.CharField(required=True)
-	dpiRepresentante=forms.IntegerField(required=True)
-	nombreRepersentante=forms.CharField(required=True)
-	apellidoRepersentante=forms.CharField(required=True)
+	primerNombre=forms.CharField(required=True)
+	segundoNombre=forms.CharField(required=True)
+	primerApellido=forms.IntegerField(required=True)
+	segundoApellido=forms.CharField(required=True)
+	fechaNacimiento=forms.DateField(required=True)
+	password= forms.CharField(widget=forms.PasswordInput, required=True)
 
 	class Meta:
 		fields=("nit","tipoEmpresa","nombreEmpresa","nombreComercial","dpiRepresentante","nombreRepersentante","apellidoRepersentante")

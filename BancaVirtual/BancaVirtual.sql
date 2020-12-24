@@ -7,6 +7,8 @@ id int auto_increment primary key,
 descripcion varchar(30) not null
 );
 
+insert into tipoEmpresa(descripcion) values (Anonima);
+
 create table clienteEmpresarial(
 nit bigint primary key,
 tipoEmpresa int not null,
