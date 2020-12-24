@@ -20,7 +20,8 @@ from . import views
 urlpatterns = [
 #Path de usuarios
     #path('',views.login),
-    path('administracion/crearCliente/', views.crearCliente),
+    path('administracion/crearClienteIndividual/', views.crearClienteIndividual),
+    path('administracion/crearClienteEmpresarial/', views.crearClienteEmpresarial),
     path('administracion/crearCuenta/', views.crearCuenta),
     path('administracion/cobrarCheque/', views.cobraCheque),
     path('administracion/crearChequera/', views.creaChequera),
