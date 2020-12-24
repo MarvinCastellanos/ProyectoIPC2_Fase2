@@ -1,34 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
+{% extends 'user/base.html' %}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Estado de Cuenta</title>
-	<!-- <link rel="stylesheet" href="../CSS/estilos.css"> --> 
-	<link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
-</head>
-<body>
-	<!--
-		<nav>
-		<div class="NAVopciones">
-			<a href="../login/" style="text-decoration:none"><p>Cuenta monetaria</p></a>
-			<p>Cuenta de ahorro</p>
-			<p>Cuenta a plazo fijo</p>
-			<p>Datos de usuario</p>
-		</div>
-		<div class="menu">aqui va el boton de menu</div>
-	</nav>
-	-->
-	<aside>
-		<a href="../transaccionPropia/" style="text-decoration:none"><p>Transaccion Propia</p></a>
-		<a href="../transaccionTercero/" style="text-decoration:none"><p>Transaccion Tercero</p></a>
-		<a href="../suspende/" style="text-decoration:none"><p>Suspender Cuenta</p></a>
-		<a href="../autorizaCheque/" style="text-decoration:none"><p>Autorizar Cheque</p></a>
-		<a href="../estadoCuenta/" style="text-decoration:none"><p>Estado de Cuenta</p></a>
-		<a href="../chequera/" style="text-decoration:none"><p>Chequera</p></a>
-		
-	</aside>
-</body>
-</html>
+{% block content %}
+    <h1>{{ mensaje }}</h1>
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+    	<button type="submit">Aceptar</button>
+    </form>
+{% endblock %}

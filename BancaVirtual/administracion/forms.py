@@ -57,10 +57,3 @@ class chequera(forms.Form):
 
 	class Meta:
 		fields=("noCuenta")
-
-
-#class producto2(forms.Form):
-#    cui = forms.IntegerField(required = True, help_text='Campo numerico, ingrese solo digitos')
-#    nit = forms.IntegerField(max_length=50, help_text='Nombre del producto',required = True)
-#    class Meta:
-#        fields = ("idproducto","nombre")

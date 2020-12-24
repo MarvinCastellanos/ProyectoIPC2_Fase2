@@ -7,8 +7,6 @@ id int auto_increment primary key,
 descripcion varchar(30) not null
 );
 
-insert into tipoEmpresa(descripcion) values (Anonima);
-
 create table clienteEmpresarial(
 nit bigint primary key,
 tipoEmpresa int not null,
@@ -165,6 +163,8 @@ foreign key(cobrador) references cobrador(dpi),
 foreign key(noCheque,noChequera,cuenta) references cheque(noCheque,noChequera,cuenta)
 );
 
+#insert into tipoEmpresa(descripcion) values ('Anonima');
+#select * from cliente;
 #select * from clienteIndividual;
 #truncate table clienteIndividual;
 #truncate table cliente;
